@@ -24,9 +24,11 @@ where `py36` is the name of my conda environment
 Go on Chrome in the window where you have your colab open. Open Inspector, go on the console and type the following: 
 ```
 function ClickConnect(){
-console.log("Working"); 
-document.querySelector("colab-toolbar-button#connect").click() 
-}
+  console.log("Connnect Clicked - Start"); 
+  document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
+  console.log("Connnect Clicked - End"); 
+};
+setInterval(ClickConnect, 60000)
 ```
 
 Ref: https://stackoverflow.com/questions/54057011/google-colab-session-timeout
